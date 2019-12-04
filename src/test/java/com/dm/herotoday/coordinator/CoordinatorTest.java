@@ -39,7 +39,7 @@ public class CoordinatorTest {
 
     @Test public void getOrgs() {
         Organization o = dao.getFromOrgs("4").get(0);
-        assertTrue(o.getMembers().size() == 1);
+        assertTrue(o.getMembers().size() == 0);
         assertTrue(o.getOrgHeadQ().size() == 3);
     }
 

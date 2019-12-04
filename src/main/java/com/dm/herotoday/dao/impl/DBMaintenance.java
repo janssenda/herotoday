@@ -25,6 +25,7 @@ public class DBMaintenance {
                 CallableStatement refresh = c.prepareCall("{CALL refreshdata()}");
                 refresh.execute();
             } catch (Exception e){
+                System.out.println();
                 // Success
             }
 

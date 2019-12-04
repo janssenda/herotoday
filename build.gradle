@@ -19,7 +19,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'mysql:mysql-connector-java'
 	implementation 'javax.inject:javax.inject:1'
-
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') 
 //			{
 //		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
