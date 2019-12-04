@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS superhero;
+CREATE DATABASE superhero;
+USE superhero;
+
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: superherodb-test
@@ -605,7 +609,7 @@ UNLOCK TABLES;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `refreshdata`()
 BEGIN
