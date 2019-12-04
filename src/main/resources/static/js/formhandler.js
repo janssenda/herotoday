@@ -31,7 +31,8 @@ function postData(urlname, data){
             "Content-Type": "application/json"},
         success: function () {
             $("#success").show();
-            clearForm();},
+            //#clearForm();},
+        },
         error: function (errmsg, txtstatus) {
             var msg = JSON.parse(errmsg.responseText).message;
             $("#failure").html(msg);
