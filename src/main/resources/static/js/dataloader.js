@@ -173,7 +173,7 @@ function loadlist(listname,val,key,selectid) {
     var list = {"Choose...": "choose"};
     $.ajax({
         type: "GET",
-        url: "/" + listname+"?load=false",
+        url: "./" + listname+"?load=false",
         success: function (results) {
             var conc = "";
 

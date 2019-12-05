@@ -24,7 +24,7 @@ function postData(urlname, data){
     $("#failure").hide();
     $.ajax({
         type: "POST",
-        url:  "/" + urlname,
+        url:  "./" + urlname,
         data: JSON.stringify(data),
         headers: {
             "Accept": "application/json",
@@ -46,7 +46,7 @@ function deleteData(urlname){
     $("#failure").hide();
     $.ajax({
         type: "DELETE",
-        url:  "/" + urlname,
+        url:  "./" + urlname,
         success: function () {
             $("#success").show();
             clearForm();},
@@ -65,7 +65,7 @@ function loadEditForm(cat, id){
     $(".removebutton").show();
     $.ajax({
         type: "GET",
-        url:  "/" + cat+"?id="+id,
+        url:  "./" + cat+"?id="+id,
         success: function (data) {
             switch (cat){
                 case "heroes": loadHeroData(data); break;

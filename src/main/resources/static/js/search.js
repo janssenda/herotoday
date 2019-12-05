@@ -101,7 +101,7 @@ function queryforresults() {
         terms = $("#searchterms").val();
     }
 
-    var call =  "/" + category + "?" + method + "=" + terms;
+    var call =  "./" + category + "?" + method + "=" + terms;
     $.ajax({
         type: "GET",
         url: call,
@@ -151,20 +151,20 @@ function heroResultsTable(results) {
 
     $.each(results, function (index, res) {
 
-        resultstable += "<tr><td class='id-col'><a href='manage.html?cat=heroes&id=" + res.heroID + "'>" + res.heroID + "</a></td>" +
-            "<td><a  target='_blank' href='manage.html?cat=heroes&id=" + res.heroID + "'>" + res.heroName + "</a></td>" +
+        resultstable += "<tr><td class='id-col'><a href='./manage.html?cat=heroes&id=" + res.heroID + "'>" + res.heroID + "</a></td>" +
+            "<td><a  target='_blank' href='./manage.html?cat=heroes&id=" + res.heroID + "'>" + res.heroName + "</a></td>" +
             "<td>" + res.heroType + "</td>" +
             "<td>";
         try {
             $.each(res.heroPowers, function (index, p) {
-                resultstable += "<a target='_blank' href='manage.html?cat=powers&id=" + p.powerID + "'>" + p.powerName + "</a>, ";
+                resultstable += "<a target='_blank' href='./manage.html?cat=powers&id=" + p.powerID + "'>" + p.powerName + "</a>, ";
             });
             resultstable = resultstable.replace(/,\s*$/, "");
         } catch (err) {}
         resultstable += "</td><td>";
         try {
             $.each(res.heroOrgs, function (index, org) {
-                resultstable += "<a target='_blank' href='manage.html?cat=orgs&id=" + org.orgID + "'>" + org.orgName + "</a>, ";
+                resultstable += "<a target='_blank' href='./manage.html?cat=orgs&id=" + org.orgID + "'>" + org.orgName + "</a>, ";
             });
             resultstable = resultstable.replace(/,\s*$/, "");
         } catch (err) {}
@@ -184,13 +184,13 @@ function orgsResultsTable(results) {
         "<th>Members</th> </tr> </thead> <tbody>";
 
     $.each(results, function (index, res) {
-        resultstable += "<tr><td class='id-col'><a target='_blank' href='manage.html?cat=orgs&id=" + res.orgID + "'>" + res.orgID + "</a></td>" +
-            "<td><a target='_blank' href='manage.html?cat=orgs&id=" + res.orgID + "'>" + res.orgName + "</a></td>" +
+        resultstable += "<tr><td class='id-col'><a target='_blank' href='./manage.html?cat=orgs&id=" + res.orgID + "'>" + res.orgID + "</a></td>" +
+            "<td><a target='_blank' href='./manage.html?cat=orgs&id=" + res.orgID + "'>" + res.orgName + "</a></td>" +
             "<td>" + res.description + "</td>" +
             "<td>";
         try {
             $.each(res.members, function (index, mem) {
-                resultstable += "<a target='_blank' href='manage.html?cat=heroes&id=" + mem.heroID + "'>" + mem.heroName + "</a>, ";
+                resultstable += "<a target='_blank' href='./manage.html?cat=heroes&id=" + mem.heroID + "'>" + mem.heroName + "</a>, ";
             });
         } catch (err) {}
         resultstable += "</td>" + "</tr>";
@@ -210,13 +210,13 @@ function headQResultsTable(results) {
 
     $.each(results, function (index, res) {
 
-        resultstable += "<tr><td class='id-col'><a target='_blank' href='manage.html?cat=headquarters&id=" + res.headQID + "'>" + res.headQID + "</a></td>" +
-            "<td><a target='_blank' href='manage.html?cat=headquarters&id=" + res.headQID + "'>" + res.headQName + "</a></td>" +
+        resultstable += "<tr><td class='id-col'><a target='_blank' href='./manage.html?cat=headquarters&id=" + res.headQID + "'>" + res.headQID + "</a></td>" +
+            "<td><a target='_blank' href='./manage.html?cat=headquarters&id=" + res.headQID + "'>" + res.headQName + "</a></td>" +
             "<td>" + res.headQAdress + "</td>" +
             "<td>" + res.description + "</td><td>";
         try {
             $.each(res.orgList, function (index, org) {
-                resultstable += "<a target='_blank' href='manage.html?cat=orgs&id=" + org.orgID + "'>" + org.orgName + "</a>, ";
+                resultstable += "<a target='_blank' href='./manage.html?cat=orgs&id=" + org.orgID + "'>" + org.orgName + "</a>, ";
             });
             resultstable = resultstable.replace(/,\s*$/, "");
         } catch (err) {}
@@ -237,7 +237,7 @@ function locationResultsTable(results) {
         "<th>Latitude</th><th>Longitude</th><th>Description</th> </tr> </thead> <tbody>";
 
     $.each(results, function (index, res) {
-        resultstable += "<tr><td class='id-col'><a target='_blank' href='manage.html?cat=locations&id=" + res.locID + "'>" + res.locID + "</a></td>" +
+        resultstable += "<tr><td class='id-col'><a target='_blank' href='./manage.html?cat=locations&id=" + res.locID + "'>" + res.locID + "</a></td>" +
             "<td>" + res.locName + "</td>" +
             "<td>" + res.country + "</td>" +
             "<td>" + res.city + "</td>" +
@@ -265,13 +265,13 @@ function sightingResultsTable(results) {
 
         var d = moment(res.sightingTime);
 
-        resultstable += "<tr><td class='id-col'><a target='_blank' href='manage.html?cat=sightings&id=" + res.sightingID
-            + "'>" + res.sightingID + "</a></td>" + "<td><a target='_blank' href='manage.html?cat=locations&id=" + res.locID + "'>" + res.locID + "</a></td>" +
+        resultstable += "<tr><td class='id-col'><a target='_blank' href='./manage.html?cat=sightings&id=" + res.sightingID
+            + "'>" + res.sightingID + "</a></td>" + "<td><a target='_blank' href='./manage.html?cat=locations&id=" + res.locID + "'>" + res.locID + "</a></td>" +
             "<td>" + d.format("MMM Do YY, h:mm a") + "</td><td>";
 
         try {
             $.each(res.sightingHeroes, function (index, hero) {
-                resultstable += "<a target='_blank' href='manage.html?cat=heroes&id=" + hero.heroID + "'>" + hero.heroName + "</a>, ";
+                resultstable += "<a target='_blank' href='./manage.html?cat=heroes&id=" + hero.heroID + "'>" + hero.heroName + "</a>, ";
             });
             resultstable = resultstable.replace(/,\s*$/, "");
         } catch (err) {
@@ -293,8 +293,8 @@ function powerResultsTable(results) {
         "<th>Description</th></tr> </thead> <tbody>";
 
     $.each(results, function (index, res) {
-        resultstable += "<tr><td class='id-col'><a target='_blank' href='manage.html?cat=powers&id=" + res.powerID + "'>" + res.powerID + "</a></td>" +
-            "<td><a target='_blank' href='manage.html?cat=powers&id=" + res.powerID + "'>" + res.powerName + "</a></td>" +
+        resultstable += "<tr><td class='id-col'><a target='_blank' href='./manage.html?cat=powers&id=" + res.powerID + "'>" + res.powerID + "</a></td>" +
+            "<td><a target='_blank' href='./manage.html?cat=powers&id=" + res.powerID + "'>" + res.powerName + "</a></td>" +
             "<td>" + res.description + "</td>" +
             "</td></tr>";
     });

@@ -655,3 +655,5 @@ DELIMITER ;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2017-10-22 20:52:16
+
+call refreshdata();

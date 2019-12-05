@@ -13,7 +13,7 @@ $(document).ready(function () {
 
 
 function getNewsFeed() {
-    var call = "/sightings?limit=10";
+    var call = "./sightings?limit=10";
     $.ajax({
         type: "GET",
         url: call,
